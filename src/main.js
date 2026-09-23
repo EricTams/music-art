@@ -102,6 +102,14 @@ function rebuildControls() {
   });
 }
 
+// Hide everything but this button, to see the piece full screen (phones).
+const uiToggle = document.getElementById('ui-toggle');
+uiToggle.addEventListener('click', () => {
+  const hidden = document.body.classList.toggle('ui-hidden');
+  uiToggle.textContent = hidden ? 'Show UI' : 'Hide UI';
+  uiToggle.setAttribute('aria-pressed', String(hidden));
+});
+
 statsEl.addEventListener('click', (e) => {
   const btn = e.target.closest('button.toggle');
   if (!btn) return;
