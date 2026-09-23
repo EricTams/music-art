@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Music Art — Acrylic Stack</title>
+    <style>
+      :root {
+        --ink: #ecebe8;
+        --muted: #9a9892;
+        --panel: rgba(24, 25, 29, 0.86);
+        --line: rgba(255, 255, 255, 0.09);
+        --ok: #6fcf97;
+        --warn: #ffb347;
+      }
+      html, body { height: 100%; margin: 0; background: #1c1d21; color: var(--ink);
+        font: 13px/1.4 ui-sans-serif, -apple-system, "Helvetica Neue", sans-serif; overflow: hidden; }
+      #stage { position: fixed; inset: 0; }
+      header { position: fixed; top: 16px; left: 16px; pointer-events: none; background: var(--panel);
+        border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; backdrop-filter: blur(6px); }
+      header h1 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
+      header p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+      #stats { position: fixed; left: 16px; bottom: 16px; background: var(--panel);
+        border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; backdrop-filter: blur(6px); }
+      #stats table { border-collapse: collapse; }
+      #stats th { text-align: left; font-weight: 500; color: var(--muted); font-size: 11px;
+        text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 10px 6px 0; }
+      #stats td { padding: 3px 10px 3px 0; border-top: 1px solid var(--line); white-space: nowrap; }
+      #stats .num { text-align: right; font-variant-numeric: tabular-nums; }
+      #stats .mm { color: var(--muted); margin-left: 4px; }
+      .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px;
+        vertical-align: -1px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25); }
+      .pill { font-size: 11px; padding: 1px 6px; border-radius: 8px; }
+      .pill.ok { color: var(--ok); background: rgba(111, 207, 151, 0.12); }
+      .pill.warn { color: var(--warn); background: rgba(255, 179, 71, 0.14); }
+      .error { color: var(--warn); margin: 0 0 6px; }
+      #stats tr.off td:not(.toggles) { opacity: 0.4; }
+      .toggles { display: flex; gap: 4px; }
+      .toggle { font: inherit; font-size: 11px; color: var(--muted); background: transparent;
+        border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; cursor: pointer; }
+      .toggle[aria-pressed="true"] { color: var(--ink); background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.28); }
+      .toggle:hover { border-color: rgba(255, 255, 255, 0.4); }
+      .toggle:focus-visible { outline: 2px solid #7ab8ff; outline-offset: 1px; }
+      .lil-gui.root { --width: 290px; max-height: calc(100vh - 16px); overflow-y: auto; }
+    </style>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <header>
+      <h1>Acrylic Stack</h1>
+      <p>4 sheets · 12 × 24 in · ⅛″ · drag to orbit, scroll to zoom</p>
+    </header>
+    <div id="stats"></div>
+    <input id="preset-file" type="file" accept="application/json,.json" hidden />
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

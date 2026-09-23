@@ -1,0 +1,259 @@
+{
+  "global": {
+    "gap": 0.75,
+    "wallGap": 1,
+    "wallColor": "#f2f0ec",
+    "cut": {
+      "margin": 0.5,
+      "standoffInset": 0.5,
+      "standoffDia": 0.25,
+      "keepout": 0.2,
+      "minBridge": 0.1,
+      "minHole": 0.04
+    },
+    "master": {
+      "h1f": 1.5,
+      "h1a": 3,
+      "h1p": 0,
+      "h2f": 3,
+      "h2a": 1.2,
+      "h2p": 0.8,
+      "h3f": 4.5,
+      "h3a": 0.7,
+      "h3p": 1.9,
+      "h4f": 0,
+      "h4a": 0,
+      "h4p": 0
+    }
+  },
+  "layers": [
+    {
+      "name": "Yellow",
+      "color": "#ffd21f",
+      "strength": 0.7,
+      "visible": true,
+      "showCurve": false,
+      "depth": 3,
+      "pattern": "moons",
+      "wave": {
+        "source": "h1-3",
+        "mode": "line",
+        "center": 6,
+        "base": 1,
+        "thickness": 0.8,
+        "softness": 1.6,
+        "invert": false,
+        "s1f": 4,
+        "s1a": 2.2,
+        "s1p": 0,
+        "s2f": 9,
+        "s2a": 0.6,
+        "s2p": 1.1,
+        "s3f": 0,
+        "s3a": 0,
+        "s3p": 0
+      },
+      "halftone": {
+        "cell": 0.3,
+        "minDot": 0,
+        "maxDot": 0.2,
+        "angle": 0,
+        "shape": "circle",
+        "offsetX": 0,
+        "offsetY": 0,
+        "avoid": false,
+        "clearance": 0.15,
+        "fade": 1
+      },
+      "bars": {
+        "pitch": 0.3,
+        "barH": 0.16,
+        "minLen": 0.1,
+        "round": true,
+        "offsetY": 0
+      },
+      "moons": {
+        "style": "crescent",
+        "thicknessBy": "fixed",
+        "thickness": 0.3,
+        "slices": 3,
+        "sliceGap": 0.12,
+        "tipGap": 0.15,
+        "minBow": 0.05,
+        "rideLower": false,
+        "side": "outside"
+      }
+    },
+    {
+      "name": "Orange",
+      "color": "#ff7a1a",
+      "strength": 0.65,
+      "visible": true,
+      "showCurve": false,
+      "depth": 2,
+      "pattern": "moons",
+      "wave": {
+        "source": "h1-2",
+        "mode": "line",
+        "center": 6,
+        "base": 1,
+        "thickness": 0.8,
+        "softness": 1.6,
+        "invert": false,
+        "s1f": 2.5,
+        "s1a": 3.2,
+        "s1p": 1.4,
+        "s2f": 6,
+        "s2a": 0.8,
+        "s2p": 0,
+        "s3f": 0,
+        "s3a": 0,
+        "s3p": 0
+      },
+      "halftone": {
+        "cell": 0.3,
+        "minDot": 0,
+        "maxDot": 0.2,
+        "angle": 0,
+        "shape": "circle",
+        "offsetX": 0,
+        "offsetY": 0,
+        "avoid": false,
+        "clearance": 0.15,
+        "fade": 1
+      },
+      "bars": {
+        "pitch": 0.3,
+        "barH": 0.16,
+        "minLen": 0.1,
+        "round": true,
+        "offsetY": 0
+      },
+      "moons": {
+        "style": "crescent",
+        "thicknessBy": "fixed",
+        "thickness": 0.8,
+        "slices": 2,
+        "sliceGap": 0.12,
+        "tipGap": 0.15,
+        "minBow": 0.05,
+        "rideLower": false,
+        "side": "outside"
+      }
+    },
+    {
+      "name": "Red",
+      "color": "#e3262b",
+      "strength": 0.6,
+      "visible": true,
+      "showCurve": false,
+      "depth": 1,
+      "pattern": "moons",
+      "wave": {
+        "source": "h1",
+        "mode": "line",
+        "center": 6,
+        "base": 1,
+        "thickness": 0.8,
+        "softness": 1.6,
+        "invert": false,
+        "s1f": 3,
+        "s1a": 2.8,
+        "s1p": 2.2,
+        "s2f": 7,
+        "s2a": 1,
+        "s2p": 0.4,
+        "s3f": 0,
+        "s3a": 0,
+        "s3p": 0
+      },
+      "halftone": {
+        "cell": 0.3,
+        "minDot": 0,
+        "maxDot": 0.2,
+        "angle": 0,
+        "shape": "circle",
+        "offsetX": 0,
+        "offsetY": 0,
+        "avoid": false,
+        "clearance": 0.15,
+        "fade": 1
+      },
+      "bars": {
+        "pitch": 0.3,
+        "barH": 0.16,
+        "minLen": 0.1,
+        "round": true,
+        "offsetY": 0
+      },
+      "moons": {
+        "style": "crescent",
+        "thicknessBy": "fixed",
+        "thickness": 1.5,
+        "slices": 1,
+        "sliceGap": 0.12,
+        "tipGap": 0.15,
+        "minBow": 0.05,
+        "rideLower": false,
+        "side": "outside"
+      }
+    },
+    {
+      "name": "Grey",
+      "color": "#7d7f84",
+      "strength": 0.55,
+      "visible": true,
+      "showCurve": false,
+      "depth": 0,
+      "pattern": "halftone",
+      "wave": {
+        "source": "master",
+        "mode": "line",
+        "center": 6,
+        "base": 1,
+        "thickness": 1.2,
+        "softness": 2,
+        "invert": false,
+        "s1f": 1.5,
+        "s1a": 3.5,
+        "s1p": 0.6,
+        "s2f": 0,
+        "s2a": 0,
+        "s2p": 0,
+        "s3f": 0,
+        "s3a": 0,
+        "s3p": 0
+      },
+      "halftone": {
+        "cell": 0.34,
+        "minDot": 0,
+        "maxDot": 0.24,
+        "angle": 45,
+        "shape": "circle",
+        "offsetX": 0,
+        "offsetY": 0,
+        "avoid": true,
+        "clearance": 0.15,
+        "fade": 1
+      },
+      "bars": {
+        "pitch": 0.3,
+        "barH": 0.16,
+        "minLen": 0.1,
+        "round": true,
+        "offsetY": 0
+      },
+      "moons": {
+        "style": "crescent",
+        "thicknessBy": "fixed",
+        "thickness": 0.4,
+        "slices": 1,
+        "sliceGap": 0.12,
+        "tipGap": 0.15,
+        "minBow": 0.05,
+        "rideLower": false,
+        "side": "outside"
+      }
+    }
+  ]
+}
