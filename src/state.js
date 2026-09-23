@@ -67,6 +67,9 @@ function layer(name, color, strength, depth, { pattern = 'halftone', wave, halft
 export function defaultState() {
   const state = {
     global: {
+      // 12 × 20 in is Glowforge's standard Proofgrade sheet and fits the
+      // Pro's bed in one pass.
+      sheet: { w: 12, h: 20 },
       gap: 0.75,
       wallGap: 1,
       wallColor: '#f2f0ec',

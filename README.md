@@ -1,7 +1,8 @@
 # Music Art
 
 A 3D visualizer for a wall piece made of four stacked, laser-cut acrylic
-sheets (yellow, orange, red and grey, front to back, 12 × 24 in, ⅛″ thick)
+sheets (yellow, orange, red and grey, front to back, ⅛″ thick; 12 × 20 in
+by default, Glowforge's standard sheet, or 12 × 24 in)
 hung on corner standoffs. Each sheet is cut with holes driven by a sine
 wave running top to bottom; where the sheets overlap, the colors mix.
 
@@ -22,6 +23,18 @@ npm run dev
 
 Then open http://localhost:5173. Designs are saved in the browser; use
 Presets → Save preset (JSON) to keep one. `presets/` holds saved designs.
+
+## Cut files
+
+```sh
+npm run export                                   # default design
+npm run export -- presets/12x24-negative-space.json
+```
+
+Writes one SVG per sheet to `exports/<width>x<height>/`, in real inches.
+Every shape is a stroke with no fill, so Glowforge imports it as a cut;
+each color is its own step: blue pattern holes, red standoff holes, green
+sheet outline (ignore it when the stock is already cut to size).
 
 ## Deploy
 

@@ -58,6 +58,8 @@ function refresh() {
   requestAnimationFrame(() => {
     pending = false;
     const results = generate(state);
+    const { w, h } = state.global.sheet;
+    document.getElementById('sheet-size').textContent = `4 sheets · ${w} × ${h} in · ⅛″`;
     view.update(state, results);
     renderStats(results);
     saveState(state);

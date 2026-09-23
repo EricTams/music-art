@@ -4,6 +4,7 @@ import { makeField } from './waves.js';
 import { PATTERNS } from './patterns/index.js';
 import { validate } from './validate.js';
 import { makeAvoidField } from './avoid.js';
+import { setSheetSize } from './sheet.js';
 
 // The wave(s) a sheet is built from, as polylines in sheet inches. The
 // lower wave is included (dashed) when moons ride on it.
@@ -28,6 +29,7 @@ const avoids = (l) => l.pattern === 'halftone' && l.halftone.avoid;
 // Sheets that fill negative space are generated last, from the holes of
 // every other sheet.
 export function generateAll(state) {
+  setSheetSize(state.global.sheet);
   const cut = state.global.cut;
   const results = [];
   const order = state.layers.map((l, i) => i).sort((a, b) => avoids(state.layers[a]) - avoids(state.layers[b]));

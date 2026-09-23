@@ -1,11 +1,18 @@
 // Physical sheet geometry. All units are inches; origin is the sheet's
 // top-left corner with y increasing downward (as hung, portrait).
 
+// Sheet size lives in the design state (global.sheet); generateAll copies
+// it here before building, so every module reads the current size.
 export const SHEET = {
   w: 12,
-  h: 24,
+  h: 20,
   t: 0.125,
 };
+
+export function setSheetSize({ w, h }) {
+  SHEET.w = w;
+  SHEET.h = h;
+}
 
 // Default cut rules, editable from the Global panel.
 export const DEFAULT_CUT = {

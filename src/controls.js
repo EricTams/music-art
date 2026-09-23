@@ -22,6 +22,15 @@ export function buildControls(state, { onChange, onView, onRandomize, onBuildUp,
 
   const g = state.global;
   const stack = gui.addFolder('Stack');
+  const size = { value: `${g.sheet.w}x${g.sheet.h}` };
+  stack
+    .add(size, 'value', { '12 × 20 in (Glowforge)': '12x20', '12 × 24 in': '12x24' })
+    .name('Sheet size')
+    .onChange((v) => {
+      const [w, h] = v.split('x').map(Number);
+      g.sheet = { w, h };
+      onChange();
+    });
   stack.add(g, 'gap', 0, 3, 0.0625).name('Gap between sheets (in)').onChange(onChange);
   stack.add(g, 'wallGap', 0.25, 4, 0.125).name('Back sheet to wall (in)').onChange(onChange);
   stack.addColor(g, 'wallColor').name('Wall color').onChange(onChange);

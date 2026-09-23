@@ -1,5 +1,9 @@
 {
   "global": {
+    "sheet": {
+      "w": 12,
+      "h": 24
+    },
     "gap": 0.75,
     "wallGap": 1,
     "wallColor": "#f2f0ec",
@@ -81,7 +85,9 @@
         "tipGap": 0.15,
         "minBow": 0.05,
         "rideLower": false,
-        "side": "outside"
+        "side": "outside",
+        "fill": "solid",
+        "spread": 0.15
       }
     },
     {
@@ -138,7 +144,9 @@
         "tipGap": 0.15,
         "minBow": 0.05,
         "rideLower": false,
-        "side": "outside"
+        "side": "outside",
+        "fill": "solid",
+        "spread": 0.15
       }
     },
     {
@@ -195,7 +203,9 @@
         "tipGap": 0.15,
         "minBow": 0.05,
         "rideLower": false,
-        "side": "outside"
+        "side": "outside",
+        "fill": "solid",
+        "spread": 0.15
       }
     },
     {
@@ -252,7 +262,9 @@
         "tipGap": 0.15,
         "minBow": 0.05,
         "rideLower": false,
-        "side": "outside"
+        "side": "outside",
+        "fill": "solid",
+        "spread": 0.15
       }
     }
   ]

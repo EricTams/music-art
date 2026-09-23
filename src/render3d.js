@@ -122,7 +122,7 @@ export function createRenderer(container) {
     const curves = new THREE.Group();
     curves.position.z = SHEET.t / 2 + 0.02;
     mesh.add(curves);
-    return { mesh, canvas, texture, faceMat, edgeMat, curves };
+    return { mesh, canvas, texture, faceMat, edgeMat, curves, w: SHEET.w, h: SHEET.h };
   }
 
   function sheetZ(g, depth) {
@@ -132,6 +132,16 @@ export function createRenderer(container) {
   function update(state, results) {
     const g = state.global;
     wallMat.color.set(g.wallColor);
+
+    // A new sheet size needs new geometry and canvases.
+    if (sheets.length && (sheets[0].w !== SHEET.w || sheets[0].h !== SHEET.h)) {
+      for (const s of sheets) {
+        scene.remove(s.mesh);
+        s.mesh.geometry.dispose();
+        s.texture.dispose();
+      }
+      sheets.length = 0;
+    }
 
     state.layers.forEach((layer, i) => {
       if (!sheets[i]) sheets[i] = makeSheet();
